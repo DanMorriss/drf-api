@@ -1,5 +1,30 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+`python3 -m venv venv`
+
+`source venv/bin/activate`
+
+`pip3 install 'django<4'`
+
+`django-admin startproject drf_api .`
+
+`pip install django-cloudinary-storage`
+
+`pip install Pillow` - Has image processing capabilities needed for this project.
+
+`python3 manage.py startapp profiles`
+
+`python3 manage.py makemigrations`
+
+`python3 manage.py migrate`
+
+`python3 manage.py createsuperuser`
+
+`python3 manage.py runserver`
+
+`pip3 freeze > requirements.txt`
+
+
 Welcome,
 
 This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
