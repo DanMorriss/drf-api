@@ -1,5 +1,7 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+[Django Rest Framework Docs](https://www.django-rest-framework.org/)
+
 `python3 -m venv venv`
 
 `source venv/bin/activate`
