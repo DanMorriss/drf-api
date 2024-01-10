@@ -36,7 +36,7 @@ class PostSerializer(serializers.ModelSerializer):
             'profile_id',
             'profile_image',
             'created_at',
-            'updated_on',
+            'updated_at',
             'title',
             'content',
             'image',
