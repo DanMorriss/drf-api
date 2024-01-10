@@ -28,6 +28,8 @@
 
 `pip install djangorestframework`
 
+`python3 manage.py startapp posts`
+
 
 Welcome,
 
