@@ -38,6 +38,7 @@ class PostList(APIView):
             status=status.HTTP_400_BAD_REQUEST
         )
 
+
 class PostDetail(APIView):
     serializer_class = PostSerializer
     permission_classes = [IsOwnerOrReadOnly]

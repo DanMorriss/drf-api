@@ -30,6 +30,8 @@
 
 `python3 manage.py startapp posts`
 
+`python3 manage.py test`
+
 
 Welcome,
 
