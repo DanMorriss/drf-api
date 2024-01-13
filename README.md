@@ -5,6 +5,10 @@
 [Django Generics Docs](https://www.django-rest-framework.org/api-guide/generic-views/#attributes/)
 [Django Related Name Docs](https://docs.djangoproject.com/en/3.2/ref/models/fields/#django.db.models.ForeignKey.related_name)
 [Django Unique Together Docs](https://docs.djangoproject.com/en/3.2/ref/models/options/#unique-together)
+[Django Aggregation Docs](https://docs.djangoproject.com/en/3.2/topics/db/aggregation/)
+[Django Annotate() Docs](https://docs.djangoproject.com/en/3.2/ref/models/querysets/#django.db.models.query.QuerySet.annotate)
+[Django Count() Docs](https://docs.djangoproject.com/en/3.2/ref/models/querysets/#django.db.models.Count)
+[Django Combine Multiple Aggregations Docs](https://docs.djangoproject.com/en/3.2/topics/db/aggregation/#combining-multiple-aggregations)
 
 
 `python3 -m venv venv`
