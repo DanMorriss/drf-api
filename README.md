@@ -9,6 +9,9 @@
 [Django Annotate() Docs](https://docs.djangoproject.com/en/3.2/ref/models/querysets/#django.db.models.query.QuerySet.annotate)
 [Django Count() Docs](https://docs.djangoproject.com/en/3.2/ref/models/querysets/#django.db.models.Count)
 [Django Combine Multiple Aggregations Docs](https://docs.djangoproject.com/en/3.2/topics/db/aggregation/#combining-multiple-aggregations)
+[JSON Web Token Docs](https://jwt.io/)
+[Django Rest Instillation Doc](https://dj-rest-auth.readthedocs.io/en/latest/installation.html)
+[Django Rest FAQ's](https://dj-rest-auth.readthedocs.io/en/latest/faq.html)
 
 
 `python3 -m venv venv`
@@ -43,3 +46,8 @@
 
 `pip install django-filter`
 
+`pip3 install dj-rest-auth==2.1.9`
+
+`pip install 'dj-rest-auth[with_social]'`
+
+`pip install djangorestframework-simplejwt`
