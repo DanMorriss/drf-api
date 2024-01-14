@@ -41,3 +41,5 @@
 
 `python3 manage.py test`
 
+`pip install django-filter`
+
