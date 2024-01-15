@@ -12,6 +12,8 @@
 [JSON Web Token Docs](https://jwt.io/)
 [Django Rest Instillation Doc](https://dj-rest-auth.readthedocs.io/en/latest/installation.html)
 [Django Rest FAQ's](https://dj-rest-auth.readthedocs.io/en/latest/faq.html)
+[Django Rest Framework Date and Time formatting Docs](https://www.django-rest-framework.org/api-guide/settings/#date-and-time-formatting)
+[Python Date and Time formatting Docs](https://docs.python.org/3/library/time.html#time.strftime)
 
 
 `python3 -m venv venv`
