@@ -53,3 +53,9 @@
 `pip install 'dj-rest-auth[with_social]'`
 
 `pip install djangorestframework-simplejwt`
+
+`pip3 install dj_database_url==0.5.0 psycopg2`
+
+`python3 manage.py makemigrations --dry-run`
+
+`pip3 install gunicorn django-cors-headers`
