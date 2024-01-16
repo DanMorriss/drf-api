@@ -66,7 +66,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    os.environ['ALLOWED_HOST']
+    os.environ['ALLOWED_HOST'],
+    'dan-morriss-drf-api-c0c866a91fa3.herokuapp.com',
 ]
 
 
