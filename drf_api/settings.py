@@ -39,7 +39,7 @@ REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%d %b %Y',
 }
 if 'DEV' not in os.environ:
-    REST_FRAMEWORK['DEFAULT_RENDER_CLASSES'] = [
+    REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
         'rest_framework.renderers.JSONRenderer',
     ]
 
@@ -62,7 +62,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['localhost', 'dan-morriss-drf-api.herokuapp.com']
+ALLOWED_HOSTS = [
+    'localhost',
+    os.environ['ALLOWED_HOST']
+]
 
 
 # Application definition
@@ -153,6 +156,7 @@ else:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
+    print('connected')
 
 
 # Password validation
