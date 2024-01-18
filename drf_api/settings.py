@@ -27,6 +27,11 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
         rf"{extracted_url}.(eu|us)\d+\.codeanyapp\.com$",
     ]
 
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+CORS_ALLOWED_ORIGINS = [
+    os.environ.get('CLIENT_ORIGIN_DEV')
+]
+
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
 }
@@ -76,7 +81,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEV' in os.environ
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -86,6 +91,7 @@ ALLOWED_HOSTS = [
     os.environ['ALLOWED_HOST'],
     'dan-morriss-drf-api-c0c866a91fa3.herokuapp.com',
     'https://dan-morriss-moments-09a1658577b2.herokuapp.com/',
+    'https://danmorriss-drf-api-436c6w6f81.us2.codeanyapp.com/#/workspaces/drf-api',
 ]
 
 
