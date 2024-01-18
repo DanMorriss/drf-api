@@ -20,14 +20,6 @@ if os.path.exists('env.py'):
 
 # THE FOLLOWING CODE IS FOR USING CODE ANYWHERE
 if 'CLIENT_ORIGIN_DEV' in os.environ:
-    extracted_url = re.match(
-        r'^([^.]+)', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
-
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        rf"{extracted_url}.(eu|us)\d+\.codeanyapp\.com$",
-    ]
-
-if 'CLIENT_ORIGIN_DEV' in os.environ:
     CORS_ALLOWED_ORIGINS = [
         os.environ.get('CLIENT_ORIGIN_DEV')
     ]
