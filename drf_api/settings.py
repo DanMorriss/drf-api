@@ -153,6 +153,15 @@ else:
     ]
 
 CORS_ALLOW_CREDENTIALS = True
+# Suggesrted by stackoverflow after migrating to render :
+CORS_ALLOW_ALL_ORIGINS = True
+# suggested additions (all three) by Johan :
+CORS_ALLOW_HEADERS = list(default_headers)
+CORS_ALLOW_METHODS = list(default_methods)
+CSRF_TRUSTED_ORIGINS = [os.environ.get(
+    'CLIENT_ORIGIN_DEV', 'CLIENT_ORIGIN',
+)]
+
 
 ROOT_URLCONF = 'drf_api.urls'
 
@@ -178,18 +187,22 @@ WSGI_APPLICATION = 'drf_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if 'DEV' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-    }
-    print('connected')
+# if 'DEV' in os.environ:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
+# else:
+#     DATABASES = {
+#         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+#     }
+#     print('connected')
+
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 
 
 # Password validation
