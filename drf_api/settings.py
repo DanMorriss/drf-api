@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from corsheaders.defaults import default_headers, default_methods
 import re
 
 if os.path.exists('env.py'):
@@ -23,6 +24,16 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
     CORS_ALLOWED_ORIGINS = [
         os.environ.get('CLIENT_ORIGIN_DEV')
     ]
+
+# from mentor's settings.py
+# Suggesrted by stackoverflow after migrating to render :
+CORS_ALLOW_ALL_ORIGINS = True
+# suggested additions (all three) by Johan :
+CORS_ALLOW_HEADERS = list(default_headers)
+CORS_ALLOW_METHODS = list(default_methods)
+CSRF_TRUSTED_ORIGINS = [os.environ.get(
+    'CLIENT_ORIGIN_DEV', 'CLIENT_ORIGIN',
+)]
 
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
@@ -54,7 +65,6 @@ REST_USE_JWT = True
 JWT_AUTH_SECURE = True
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
-# JWT_AUTH_REFRESH_COOKE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
 
 REST_AUTH_SERIALIZERS = {
@@ -86,6 +96,10 @@ ALLOWED_HOSTS = [
     'https://danmorriss-drf-api-436c6w6f81.us2.codeanyapp.com/#/workspaces/drf-api',
 ]
 
+# from https://github.com/CluelessBiker/project5-drf-api/blob/main/p5_drf_api/settings.py
+# RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+# if RENDER_EXTERNAL_HOSTNAME:
+#     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
