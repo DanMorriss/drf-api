@@ -19,10 +19,11 @@ import re
 if os.path.exists('env.py'):
     import env
 
-# THE FOLLOWING CODE IS FOR USING CODE ANYWHERE
+# THE FOLLOWING CODE IS FOR USING GITPOD
 if 'CLIENT_ORIGIN_DEV' in os.environ:
-    CORS_ALLOWED_ORIGINS = [
-        os.environ.get('CLIENT_ORIGIN_DEV')
+    extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
     ]
 
 # from mentor's settings.py
@@ -83,17 +84,19 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEV' in os.environ
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '127.0.0.1:3000',
     'localhost:3000',
+    'http://127.0.0.1:8000',
     os.environ['ALLOWED_HOST'],
     'dan-morriss-drf-api-c0c866a91fa3.herokuapp.com',
-    'https://dan-morriss-moments-09a1658577b2.herokuapp.com/',
+    'https://dan-morriss-moments-09a1658577b2.herokuapp.com',
     'https://danmorriss-drf-api-436c6w6f81.us2.codeanyapp.com/#/workspaces/drf-api',
+    '8000-danmorriss-drfapi-jmx2ngnqqt2.ws-eu107.gitpod.io',
 ]
 
 # from https://github.com/CluelessBiker/project5-drf-api/blob/main/p5_drf_api/settings.py
