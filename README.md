@@ -123,3 +123,9 @@ After adding this code into package.json it should not need the above command to
 [Frontend repo](https://github.com/DanMorriss/moments.git)
 
 `git clone <react_repo_url> frontend`
+
+To get into the frontend folder to run the react project  
+`cd frontend`
+
+To go back to the api folder  
+`cd ..`
