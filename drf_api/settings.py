@@ -91,7 +91,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1:3000',
     'localhost:3000',
     'http://127.0.0.1:8000',
-    os.environ.get['ALLOWED_HOST'],
+    os.environ['ALLOWED_HOST'],
     'dan-morriss-drf-api-c0c866a91fa3.herokuapp.com',
     'https://dan-morriss-moments-09a1658577b2.herokuapp.com',
     'https://danmorriss-drf-api-436c6w6f81.us2.codeanyapp.com/#/workspaces/drf-api',
