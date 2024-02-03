@@ -129,3 +129,6 @@ To get into the frontend folder to run the react project
 
 To go back to the api folder  
 `cd ..`
+
+This install is for Codeanywhere
+`pip3 install urllib3==1.26.15`

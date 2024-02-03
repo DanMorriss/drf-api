@@ -14,7 +14,6 @@ from pathlib import Path
 import os
 import dj_database_url
 from corsheaders.defaults import default_headers, default_methods
-import re
 
 if os.path.exists('env.py'):
     import env
@@ -28,10 +27,10 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
 
 # from mentor's settings.py
 # Suggesrted by stackoverflow after migrating to render :
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
 # suggested additions (all three) by Johan :
-CORS_ALLOW_HEADERS = list(default_headers)
-CORS_ALLOW_METHODS = list(default_methods)
+# CORS_ALLOW_HEADERS = list(default_headers)
+# CORS_ALLOW_METHODS = list(default_methods)
 CSRF_TRUSTED_ORIGINS = [os.environ.get(
     'CLIENT_ORIGIN_DEV', 'CLIENT_ORIGIN',
 )]
@@ -84,7 +83,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEV' in os.environ
-DEBUG = True
+DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -92,7 +91,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1:3000',
     'localhost:3000',
     'http://127.0.0.1:8000',
-    os.environ['ALLOWED_HOST'],
+    os.environ.get['ALLOWED_HOST'],
     'dan-morriss-drf-api-c0c866a91fa3.herokuapp.com',
     'https://dan-morriss-moments-09a1658577b2.herokuapp.com',
     'https://danmorriss-drf-api-436c6w6f81.us2.codeanyapp.com/#/workspaces/drf-api',
@@ -150,17 +149,17 @@ if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
         os.environ.get('CLIENT_ORIGIN')
     ]
-else:
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        r"^https://.*\.gitpod\.io$",
-    ]
+#else:
+#    CORS_ALLOWED_ORIGIN_REGEXES = [
+#        r"^https://.*\.gitpod\.io$",
+#    ]
 
-CORS_ALLOW_CREDENTIALS = True
+#CORS_ALLOW_CREDENTIALS = True
 # Suggesrted by stackoverflow after migrating to render :
-CORS_ALLOW_ALL_ORIGINS = True
+#CORS_ALLOW_ALL_ORIGINS = True
 # suggested additions (all three) by Johan :
-CORS_ALLOW_HEADERS = list(default_headers)
-CORS_ALLOW_METHODS = list(default_methods)
+#CORS_ALLOW_HEADERS = list(default_headers)
+#CORS_ALLOW_METHODS = list(default_methods)
 CSRF_TRUSTED_ORIGINS = [os.environ.get(
     'CLIENT_ORIGIN_DEV', 'CLIENT_ORIGIN',
 )]
